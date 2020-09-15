@@ -23,7 +23,7 @@ function createServer(config) {
   /**** Add routes ****/
   app.use("/api", routes);
 
-  // "Redirect" all other get requests to React's entry point (index.html) to be handled by Reach router.
+  // "Redirect" all non-API GET requests to React's entry point (index.html)
   app.get('*', (req, res) =>
     res.sendFile(path.resolve('..', 'client', 'build', 'index.html'))
   );
