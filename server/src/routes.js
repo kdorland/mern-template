@@ -1,14 +1,21 @@
-module.exports = () => {
+module.exports = (kittenDB) => {
   const express = require("express");
   const router = express.Router();
 
   /**** Routes ****/
-  router.get('/hello', async (req, res) => {
-    res.json({msg: "Hello, world!"});
+  router.get('/', async (req, res) => {
+    const kittens = await kittenDB.getKittens(); 
+    res.json(kittens);
   });
 
-  router.get('/hello/:name', async (req, res) => {
-    res.json({msg: `Hello, ${req.params.name}`});
+  router.get('/:id', async (req, res) => {
+    const kitten = await kittenDB.getKitten(req.params.id);
+    res.json(kitten);
+  });
+
+  router.post('/', async (req, res) => {
+    // TODO: Implement!
+    res.json({msg: "Not implemented :("});
   });
 
   return router;
