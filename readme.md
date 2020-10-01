@@ -14,7 +14,7 @@ The app is fully deployable to any PaaS like Heroku or AWS Elastic Beanstalk tha
 ## Commands
 The package.json provides all the commands needed to test and run this application.
 - **npm run install** install all dependencies for the server and the client.
-- **npm run build** builds the React app ready so it can be served by the server.
+- **npm run build** builds the React app so it can be served by the server.
 - **npm start** starts the server which provides the API and serves the react app.
 - **npm run react-dev** is for starting the React app in development mode on http://localhost:3000. This requires that the API server is already running on port 8080
 
