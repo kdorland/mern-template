@@ -1,5 +1,4 @@
 /**** Node.js libraries *****/
-const fs = require('fs');
 const path = require('path');
 
 /**** External libraries ****/
@@ -11,7 +10,7 @@ const cors = require('cors');
 /**** Configuration ****/
 const app = express(); 
 
-function createServer(config) {
+function createServer() {
   const routes = require("./routes")();
 
   app.use(bodyParser.json()); 
